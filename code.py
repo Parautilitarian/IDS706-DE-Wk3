@@ -7,7 +7,7 @@ import polars as pl
 ecommerce = pl.read_csv("/workspaces/IDS706-DE-Wk3/Ecommerce_Consumer_Behavior_Analysis_Data.csv")
 
 # Data inspection
-print("E-Commerce Customer Behavir Data:")
+print("E-Commerce Customer Behavior Data:")
 print(ecommerce.head())
 
 # Check column names
