@@ -7,45 +7,46 @@ import polars as pl
 ecommerce = pl.read_csv("/workspaces/IDS706-DE-Wk3/Ecommerce_Consumer_Behavior_Analysis_Data.csv")
 
 # Data inspection
-# print("E-Commerce Customer Behavir Data:")
-# print(ecommerce.head())
+print("E-Commerce Customer Behavir Data:")
+print(ecommerce.head())
 
-# # Check column names
-# print(ecommerce.columns)
+# Check column names
+print("Columns include:")
+print(ecommerce.columns)
 
-# # print("Size:")
-# print(ecommerce.estimated_size())
+print("Size:")
+print(ecommerce.estimated_size())
 
-# # print("Description:")
-# print(ecommerce.describe())
+print("Description:")
+print(ecommerce.describe())
 
-# # Check for missing values
-# print("Missing values:\n", ecommerce.null_count())
+# Check for missing values
+print("Missing values:\n", ecommerce.null_count())
 
-# # Drop duplicates
-# ecommerce = ecommerce.unique()
-# print("Cleaned shape:", ecommerce.shape)
+# Drop duplicates
+ecommerce = ecommerce.unique()
+print("Cleaned shape:", ecommerce.shape)
 
-# # Find Time to Decision by Income Level
-# grouping1 = ecommerce.group_by("Income_Level").agg(
-#     pl.col("Time_to_Decision").median().alias("Decision_Time_by_Income")
-# )
-# print(grouping1)
+# Find Time to Decision by Income Level
+grouping1 = ecommerce.group_by("Income_Level").agg(
+    pl.col("Time_to_Decision").median().alias("Decision_Time_by_Income")
+)
+print(grouping1)
 
-# # Reformat the Income Amount data type from string values in dollar amount to float
-# ecommerce = ecommerce.with_columns(
-#     pl.col("Purchase_Amount")
-#     .str.strip_chars()              # remove leading/trailing spaces
-#     .str.replace_all(r"[\$,]", "")  # remove $ and ,
-#     .cast(pl.Float64)               # convert to float
-#     .alias("price_float")
-# )
+# Reformat the Income Amount data type from string values in dollar amount to float
+ecommerce = ecommerce.with_columns(
+    pl.col("Purchase_Amount")
+    .str.strip_chars()              # remove leading/trailing spaces
+    .str.replace_all(r"[\$,]", "")  # remove $ and ,
+    .cast(pl.Float64)               # convert to float
+    .alias("price_float")
+)
 
-# # Find Purchase Amount by Education Level
-# grouping2 = ecommerce.group_by("Education_Level").agg(
-#     pl.col("price_float").mean().round(2).alias("Amount_by_Education")
-# )
-# print(grouping2)
+# Find Purchase Amount by Education Level
+grouping2 = ecommerce.group_by("Education_Level").agg(
+    pl.col("price_float").mean().round(2).alias("Amount_by_Education")
+)
+print(grouping2)
 
 from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
