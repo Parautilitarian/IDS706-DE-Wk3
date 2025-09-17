@@ -1,0 +1,9 @@
+polars
+scikit-learn
+xgboost
+numpy
+flake8
+pytest
+click
+black
+pytest-cov

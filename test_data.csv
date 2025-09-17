@@ -1,0 +1,5 @@
+Customer_ID,Income_Level,Education_Level,Purchase_Amount,Time_to_Decision,Return_Rate,Feature1
+1,High,Graduate,$100.00,5,0.1,10
+2,Low,Undergraduate,$50.00,3,0.2,20
+3,Medium,Graduate,$200.00,7,0.15,15
+4,High,Postgraduate,$150.00,6,0.3,25
