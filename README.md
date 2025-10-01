@@ -1,8 +1,6 @@
 # IDS706-DE-Wk3
 IDS706 basic dataset analysis
 
-[![Docker Image CI](https://github.com/Parautilitarian/IDS706-eCommerce-Customer-Behavior/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Parautilitarian/IDS706-eCommerce-Customer-Behavior/actions/workflows/docker-image.yml)
-
 # E-Commerce Consumer Behavior Analysis
 
 This project analyzes an **e-commerce consumer behavior dataset** using **Polars** for data processing and **XGBoost** for machine learning. It demonstrates data cleaning, feature engineering, exploratory analysis, and predictive modeling.
@@ -68,4 +66,4 @@ python ecommerce_analysis.py
 - Model evaluation metrics (MSE, RMSE, R²)
 - Feature importance bar chart
 
-
+[![Docker Image CI](https://github.com/Parautilitarian/IDS706-eCommerce-Customer-Behavior/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Parautilitarian/IDS706-eCommerce-Customer-Behavior/actions/workflows/docker-image.yml)
