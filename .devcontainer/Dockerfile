@@ -4,10 +4,11 @@ FROM python:3.10-slim
 # ===== Set working directory =====
 WORKDIR /app
 
-# ===== Install system dependencies (needed for numpy, xgboost, scikit-learn, matplotlib) =====
+# ===== Install system dependencies (needed for numpy, xgboost, scikit-learn, matplotlib, git) =====
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # ===== Copy project files =====

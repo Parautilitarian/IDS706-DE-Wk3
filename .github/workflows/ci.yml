@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t ecommerce-ci -f .devcontainer/Dockerfile .
+        run: docker build -t ecommerce-ci .
 
       - name: Run CI inside container
         run: docker run --rm ecommerce-ci
